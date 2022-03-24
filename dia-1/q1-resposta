@@ -1,0 +1,2 @@
+kubectl run giropops --image=nginx:1.18.0 -n strigus --dry-run=client -o yaml > q1-pod.yaml
+kubectl create -f q1-pod.yaml

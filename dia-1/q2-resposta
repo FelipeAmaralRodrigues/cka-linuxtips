@@ -1,0 +1,3 @@
+kubectl create deployment girus --image=nginx:1.18.0 -n strigus --dry-run=client -o yaml > q2-deployment.yaml
+kubectl create -f q2-deployment.yaml
+kubectl scale deployment --replicas=3 girus -n strigus

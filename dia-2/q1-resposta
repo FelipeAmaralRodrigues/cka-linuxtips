@@ -1,0 +1,15 @@
+Quantos nodes são workers?
+2
+
+Quantos nodes são masters?
+1
+
+Qual o Pod Network (CNI) que estamos utilizando?
+kubectl get ds -n kube-system
+ou
+cat /etc/cni/net.d/10-weave.conflist
+
+weave
+
+Qual o CIDR dos pods no segundo worker?
+kubectl cluster-info dump | grep -i cidr

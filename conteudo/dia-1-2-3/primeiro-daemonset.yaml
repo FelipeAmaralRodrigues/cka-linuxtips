@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: deamon-set-primeiro
+spec:
+  selector:
+    matchLabels:
+      run: nginx
+  template:
+    metadata:
+      labels:
+        system: Giropops
+        run: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx
+        ports:
+          - containerPort: 80
+  updateStrategy:
+    type: RollingUpdate

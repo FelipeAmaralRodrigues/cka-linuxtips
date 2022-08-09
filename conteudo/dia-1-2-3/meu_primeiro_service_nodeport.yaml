@@ -8,9 +8,6 @@ metadata:
 spec:
   externalTrafficPolicy: Cluster
   internalTrafficPolicy: Cluster
-  ipFamilies:
-  - IPv4
-  ipFamilyPolicy: SingleStack
   ports:
   - nodePort: 30508
     port: 80
@@ -20,5 +17,3 @@ spec:
     app: nginx
   sessionAffinity: None
   type: NodePort
-status:
-  loadBalancer: {}

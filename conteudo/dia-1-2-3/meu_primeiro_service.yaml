@@ -6,13 +6,6 @@ metadata:
   name: nginx
   namespace: default
 spec:
-  clusterIP: 10.106.8.145
-  clusterIPs:
-  - 10.106.8.145
-  internalTrafficPolicy: Cluster
-  ipFamilies:
-  - IPv4
-  ipFamilyPolicy: SingleStack
   ports:
   - port: 80
     protocol: TCP

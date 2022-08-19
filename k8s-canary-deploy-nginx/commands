@@ -1,0 +1,15 @@
+kubectl create -f app-v1.yml 
+kubectl create -f service-app.yml 
+kubectl create -f app-v2-canary.yml 
+kubectl apply -f app-v2.yml 
+kubectl scale deployment giropops-v1 --replicas 8
+kubectl scale deployment giropops-v1 --replicas 6
+kubectl scale deployment giropops-v1 --replicas 4
+kubectl scale deployment giropops-v1 --replicas 2
+kubectl scale deployment giropops-v1 --replicas 1
+kubectl delete deployments.apps giropops-v1
+
+kubectl rollout history deployment 
+kubectl rollout history deployment --revision 1
+kubectl rollout history deployment --revision 2
+kubectl rollout status deployment giropops-v2

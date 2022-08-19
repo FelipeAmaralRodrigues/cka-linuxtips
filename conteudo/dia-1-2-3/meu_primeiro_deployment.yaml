@@ -1,27 +1,26 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  annotations:
-  generation: 1
   labels:
-    app: nginx
-  name: nginx
+    run: nginx
+    app: giropops
+  name: primeiro-deployment
   namespace: default
 spec:
-  replicas: 10
-  revisionHistoryLimit: 10
+  replicas: 1
   selector:
     matchLabels:
-      app: nginx
+      run: nginx
   template:
     metadata:
       labels:
-        app: nginx
+        run: nginx
+        dc: UK
     spec:
       containers:
       - image: nginx
         imagePullPolicy: Always
-        name: nginx
+        name: nginx2
         ports:
         - containerPort: 80
           protocol: TCP
